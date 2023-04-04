@@ -40,10 +40,10 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 
 # **Contact**
 
-### Renan Oliveira - **renanlido@yahoo.com.br**
+### Antonio Alexandre Cordeiro - **antonioalexandre1984@gmail.com**
 
-[Github](https://github.com/renanlido) - **https://github.com/renanlido** </br>
-[Linkedin](https://www.linkedin.com/in/renanlido/) - **https://www.linkedin.com/in/renanlido/**
+[Github](https://github.com/antonioalexandre1984) - **https://github.com/antonioalexandre1984** </br>
+[Linkedin](https://www.linkedin.com/in/antonioacs/) - **https://www.linkedin.com/in/antonioacs/**
 
 </br></br>
 Thanks for coming! 😊🤗
