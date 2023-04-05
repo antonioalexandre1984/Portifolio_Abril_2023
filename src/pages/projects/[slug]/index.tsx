@@ -66,16 +66,44 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+type IProjectProps = {
+  slug: string;
+  title: string;
+  type: string | null;
+  description: string;
+  link: string;
+  thumbnail: string;
+};
+
+type PrismicProjectResponse = {
+  uid: string;
+  data: {
+    title: string;
+    type: string;
+    description: string;
+    link: {
+      url: string;
+    };
+    thumbnail: {
+      url: string;
+    };
+  };
+};
+
 export const getStaticProps: GetStaticProps = async context => {
   const prismic = getPrismicClient();
   const { slug } = context.params;
 
-  const response = await prismic.getByUID('project', String(slug), {});
+  const response = (await prismic.getByUID(
+    'project',
+    String(slug),
+    {}
+  )) as PrismicProjectResponse;
 
-  const project = {
+  const project: IProjectProps = {
     slug: response.uid,
     title: response.data.title,
-    type: response.data.type,
+    type: response.data.type || null,
     description: response.data.description,
     link: response.data.link.url,
     thumbnail: response.data.thumbnail.url
@@ -85,6 +113,6 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       project
     },
-    revalidate: 60 * 60 * 24 // 24 hours
+    revalidate: 86400 // 24horas
   };
 };

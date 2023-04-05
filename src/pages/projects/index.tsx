@@ -42,19 +42,22 @@ export const getStaticProps: GetStaticProps = async () => {
   const projectsResponse = await prismic.query(
     [Prismic.predicates.at('document.type', 'project')],
     {
-      orderings: '[document.first_publication_data desc]'
+      orderings: '[document.first_publication_date desc]',
+      pageSize: 100
     }
   );
 
-  const projects = projectsResponse.results.map(project => ({
-    slug: project.uid,
-    title: project.data.title,
-    type: project.data.type,
-    description: project.data.description,
-    link: project.data.link.url,
-    thumbnail: project.data.thumbnail.url
+  const projects = projectsResponse.results.map((project: unknown) => ({
+    slug: (project as { uid: string }).uid,
+    title: (project as { data: { title: string } }).data.title,
+    type: (project as { data: { type: string | null } }).data.type,
+    description: (project as { data: { description: string } }).data
+      .description,
+    link: (project as { data: { link: { link_type: string; url: string } } })
+      .data.link,
+    thumbnail: (project as { data: { thumbnail: { url: string } } }).data
+      .thumbnail.url
   }));
-  /*   console.log(projectsResponse.results); */
 
   return {
     props: {
