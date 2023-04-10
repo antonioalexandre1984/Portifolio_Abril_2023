@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+/* eslint-disable react/button-has-type */
+import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { GetStaticProps } from 'next';
@@ -12,6 +13,8 @@ import { Knowledge } from '../components/Knowledge';
 import { FormContact } from '../components/FormContact';
 import { Footer } from '../components/Footer';
 import { getPrismicClient } from '../services/prismic';
+import messagesPtBr from '../../messages-pt-br.json';
+import messagesEnUs from '../../messages-en-us.json';
 
 interface IProject {
   slug: string;
@@ -32,9 +35,16 @@ export default function Home({ projects }: HomeProps) {
     });
   }, []);
 
+  const [language, setLanguage] = useState('pt-br');
+  const messages = language === 'pt-br' ? messagesPtBr : messagesEnUs;
+
   return (
     <HomeContainer>
-      <Header />
+      <h1>
+        {messages.hello}, {messages.world}!
+      </h1>
+
+      <Header setLanguage={setLanguage} />
       <main className="container">
         <HomeHero />
         <Experience />

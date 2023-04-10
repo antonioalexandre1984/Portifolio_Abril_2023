@@ -43,6 +43,15 @@ export const Container = styled.div`
   }
 `;
 
+export const VideoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  flex-direction: column;
+  color: ${({ theme }) => theme.colors.primary};
+`;
+
 export const TextContainer = styled.section`
   margin-bottom: 2rem;
   width: 100%;

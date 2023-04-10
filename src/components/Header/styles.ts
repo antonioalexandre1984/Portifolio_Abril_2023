@@ -11,6 +11,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
   height: 4rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundLight};
 
@@ -19,6 +20,30 @@ export const Container = styled.header`
     align-items: center;
     gap: 2rem;
   }
+`;
+
+export const ButtonContainer = styled.button`
+  display: flex;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  background: transparent;
+      button{
+        border: none;
+        border-radius: 1rem;
+        padding: 0.50rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: ${({ theme }) => theme.colors.primary};
+        color: ${({ theme }) => theme.colors.background};
+        &:hover{
+          background: ${({ theme }) => theme.colors.secondary};
+          color: ${({ theme }) => theme.colors.background};
+        }
+      }
+
 `;
 
 export const NavLinkContainer = styled.li<NavLinkProps>`
@@ -36,4 +61,5 @@ export const NavLinkContainer = styled.li<NavLinkProps>`
       : lighten(0.2, props.theme.colors.textHighLight)
   };
   }
+}
 `;

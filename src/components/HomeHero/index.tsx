@@ -2,13 +2,28 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { BsWhatsapp } from 'react-icons/bs'
 import Link from 'next/link';
-import { Container, TextContainer, InfosContainer, CodeItem } from './styles';
+import { Container, TextContainer, InfosContainer, CodeItem, VideoContainer } from './styles';
 import photo2 from '../../assets/photo2.png';
 
 export function HomeHero() {
   return (
     <Container data-aos='fade-up'>
-      <img src={photo2} alt="" className="minha foto" />
+      <div className="">
+        <img src={photo2} alt="" className="minha foto" />
+        {/* videos do youtube */}
+        <VideoContainer>
+          <iframe
+            width="400"
+            height="300"
+            src="https://www.youtube.com/embed/j9y94oEJMQw"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+          <h1>Meu Video Pitch</h1>
+        </VideoContainer>
+      </div>
       <div className="">
         <TextContainer>
           <h1>Olá
