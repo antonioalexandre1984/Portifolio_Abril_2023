@@ -4,8 +4,13 @@ import {
   AiOutlineLinkedin
 } from 'react-icons/ai';
 import { Container } from './styles';
+import { useLanguage } from '../hooks/useLanguage';
+import { footer } from '../../../data';
 
 export function Footer() {
+  const { language } = useLanguage();
+  const data = footer[language];
+
   function handleRedirect(url: string) {
     window.open(url, '_blank');
   }
@@ -20,7 +25,7 @@ export function Footer() {
     <Container>
       <div className="container">
         <button type="button" onClick={() => handleScrollTop()}>
-          Voltar ao Topo
+          {data.title}
         </button>
         <section className="">
           <AiOutlineTwitter

@@ -4,13 +4,22 @@ import { BsWhatsapp } from 'react-icons/bs'
 import Link from 'next/link';
 import { Container, TextContainer, InfosContainer, CodeItem, VideoContainer } from './styles';
 import photo2 from '../../assets/photo2.png';
+import { useLanguage } from '../hooks/useLanguage';
+import { formHeroData, heroData } from '../../../data';
 
 export function HomeHero() {
+  const { language } = useLanguage();
+  const data = heroData[language];
+  const formData = formHeroData[language]
+  const WhatsAppButton = () => {
+    window.location.href = 'https://wa.me/5583987921452';
+  };
+
   return (
     <Container data-aos='fade-up'>
       <div className="">
-        <img src={photo2} alt="" className="minha foto" />
-        {/* videos do youtube */}
+        <img src={photo2} alt="" className="photo" />
+        {/* videos youtube */}
         <VideoContainer>
           <iframe
             width="400"
@@ -21,76 +30,75 @@ export function HomeHero() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-          <h1>Meu Video Pitch</h1>
+          <h1>{data.pitch}</h1>
         </VideoContainer>
       </div>
       <div className="">
         <TextContainer>
-          <h1>Olá
+          <h1>{data.hello}
             <Link href='/'>
               <a>
                 <BsWhatsapp
                   size='80px'
                   color='#25D366'
                   style={{ marginLeft: '20px' }}
+                  onClick={WhatsAppButton}
                 />
               </a>
             </Link>
           </h1>
 
-          <h2>Sou o Alexandre</h2>
+          <h2>{data.name}</h2>
         </TextContainer>
         <InfosContainer>
           <CodeItem data-aos='zoom-in'>
-            <span className="comment">// Informações Pessoais</span>
+            <span className="comment">{data.titlePerson}</span>
             <span className="purple">Infos</span> {'\u007B'}
             <div>
-              Nome: <span className="blue">Antonio Alexandre</span>
+              {formData.firstName}: <span className="blue">{data.firstName}</span>
             </div>
             <div>
-              Sobrenome: <span className="blue">Cordeiro</span>
+              {formData.lastName}: <span className="blue">{data.lastName}</span>
             </div>
             <div>
-              Idade: <span className="blue">38 anos</span>
+              {formData.age}: <span className="blue">{data.age}</span>
             </div>
 
             <div>
-              Residência: <span className="blue">Campina Grande - PB</span>
+              {formData.address}: <span className="blue">{data.address}</span>
             </div>
-            {'\u007D'} {/* código unicode para chaves */}
+            {'\u007D'}
           </CodeItem>
 
           <CodeItem data-aos="zoom-in">
-            <span className="comment">// Formação Academica</span>
+            <span className="comment">{data.titleSoftSkills}</span>
             <span className="purple">Infos</span> {'\u007B'}
             <div>
-              Nivel Superior: <span className="blue">Analise e desenvolvimento de sistemas - UNINASSAU - 2020</span>
+              {formData.profile}: <span className="blue">{data.profile}</span>
             </div>
             <div>
-              Digital House: <span className="blue">Deenvolvedor Web Fullstack - 2022</span>
+              {formData.strong}: <span className="blue">{data.strong}</span>
             </div>
             <div>
-              RocketSeat: <span className="blue">Ignite React - 2023</span>
+              {formData.weak}: <span className="blue">{data.weak}</span>
             </div>
             {'\u007D'}
           </CodeItem>
 
           <CodeItem data-aos='zoom-in'>
-            <span className="comment">// Informações Comportamentais</span>
+            <span className="comment">{data.titleBackground}</span>
             <span className="purple">Infos</span> {'\u007B'}
             <div>
-              Perfil: <span className="blue">Calmo e resiliente </span>
+              {formData.bachelor}: <span className="blue">{data.bachelor}</span>
             </div>
             <div>
-              Pontos Fortes: <span className="blue">Determinado e Persistente</span>
+              {formData.digitalHouse}: <span className="blue">{data.digitalHouse}</span>
             </div>
             <div>
-              Pontos a melhorar: <span className="blue">Anciosidade</span>
+              {formData.rocketSeat}: <span className="blue">{data.rocketSeat}</span>
             </div>
             {'\u007D'}
           </CodeItem>
-
-
         </InfosContainer>
       </div>
     </Container>

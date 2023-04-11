@@ -2,8 +2,13 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { FormContainer, Input, TextArea } from './styles';
 import { sendContactMail } from '../../services/sendMail';
+import { useLanguage } from '../hooks/useLanguage';
+import { contact } from '../../../data';
 
 export function Form() {
+  const { language } = useLanguage();
+  const data = contact[language];
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -61,22 +66,22 @@ export function Form() {
   return (
     <FormContainer data-aos="fade-up" onSubmit={handleSubmit}>
       <Input
-        placeholder="Nome"
+        placeholder={data.name}
         value={name}
         onChange={({ target }) => setName(target.value)}
       />
       <Input
-        placeholder="E-mail"
+        placeholder={data.email}
         value={email}
         onChange={({ target }) => setEmail(target.value)}
       />
       <TextArea
-        placeholder="Mensagem"
+        placeholder={data.message}
         value={message}
         onChange={({ target }) => setMessage(target.value)}
       />
       <button type="submit" disabled={loading}>
-        Enviar
+        {data.button}
       </button>
     </FormContainer>
   );

@@ -5,11 +5,15 @@ import { AiFillHtml5 } from 'react-icons/ai';
 import { SectionTitle } from '../SectionTitle';
 import { KnowledgeItem } from './KnowledgeItem';
 import { Container } from './styles';
+import { useLanguage } from '../hooks/useLanguage';
+import { stacks } from '../../../data';
 
 export function Knowledge() {
+  const { language } = useLanguage();
+  const data = stacks[language];
   return (
     <Container>
-      <SectionTitle title="Principais Stacks" />
+      <SectionTitle title={data.title} />
       <section className="">
         <KnowledgeItem title="HTML" icon={<AiFillHtml5 />} />
         <KnowledgeItem title="CSS" icon={<FaCss3Alt />} />

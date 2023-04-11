@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { SectionTitle } from '../SectionTitle';
 import { Container } from './styles';
 import { ProjectItem } from './ProjectItem';
+import { useLanguage } from '../hooks/useLanguage';
+import { showProjects } from '../../../data';
 
 interface IProject {
   slug: string;
@@ -16,10 +18,12 @@ interface ProjectItemProps {
   projects: IProject[];
 }
 export function Projects({ projects }: ProjectItemProps) {
-  console.log(projects);
+  const { language } = useLanguage();
+  const data = showProjects[language];
+
   return (
     <Container>
-      <SectionTitle title="Ultimos Projetos" />
+      <SectionTitle title={data.title} />
       <section>
         {projects.slice(0, 3).map(project => (
           <ProjectItem
@@ -33,7 +37,7 @@ export function Projects({ projects }: ProjectItemProps) {
       </section>
       <button type="button">
         <Link href="/projects">
-          <a>See All Projects</a>
+          <a>{data.button}</a>
         </Link>
       </button>
     </Container>

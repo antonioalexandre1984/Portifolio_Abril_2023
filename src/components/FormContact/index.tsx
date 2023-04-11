@@ -1,14 +1,15 @@
 import { Container } from './styles';
 import { Form } from './Form';
 import { SectionTitle } from '../SectionTitle';
+import { useLanguage } from '../hooks/useLanguage';
+import { contact } from '../../../data';
 
 export function FormContact() {
+  const { language } = useLanguage();
+  const data = contact[language];
   return (
     <Container>
-      <SectionTitle
-        title="Vamos conversar?"
-        subtitle="Preencha o formulário abaixo que entrarei em contato com você."
-      />
+      <SectionTitle title={data.title} subtitle={data.description} />
       <Form />
     </Container>
   );
