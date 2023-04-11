@@ -12,6 +12,7 @@ export const defaultTheme = {
     border: '#313958',
     inputBackground: '#1E253E',
     error: '#D4545D',
+    errorBackground: '#C4C4C4',
     white: '#ffffff',
     purple: '#c38cdd',
     blue: '#7ac7e3'

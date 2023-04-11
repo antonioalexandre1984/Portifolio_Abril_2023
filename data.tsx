@@ -9,7 +9,8 @@ export const formHeroData = {
     weak: 'Weak',
     bachelor: 'Bachelor',
     digitalHouse: 'Digital House',
-    rocketSeat: 'Rocket Seat'
+    rocketSeat: 'Rocket Seat',
+    content: 'Message sent successfully'
   },
   pt: {
     firstName: 'Nome',
@@ -21,7 +22,8 @@ export const formHeroData = {
     weak: 'Fracos',
     bachelor: 'Graduação',
     digitalHouse: 'Digital House',
-    rocketSeat: 'Rocket Seat'
+    rocketSeat: 'Rocket Seat',
+    content: 'Mensagem enviada com sucesso!'
   }
 };
 
@@ -159,7 +161,11 @@ export const contact = {
     name: 'Name',
     email: 'Email',
     message: 'Message',
-    button: 'Send Message'
+    button: 'Send Message',
+    notification: {
+      title: 'Success!',
+      messageSuccess: 'Message sent successfully!'
+    }
   },
   pt: {
     title: 'Vamos conversar?',
@@ -167,7 +173,11 @@ export const contact = {
     name: 'Nome',
     email: 'Email',
     message: 'Mensagem',
-    button: 'Enviar Mensagem'
+    button: 'Enviar Mensagem',
+    notification: {
+      title: 'Sucesso!',
+      messageSuccess: 'Mensagem enviada com sucesso!'
+    }
   }
 };
 
