@@ -20,7 +20,7 @@ interface ProjectProps {
 export default function Projects({ projects }: ProjectProps) {
   return (
     <ProjectsContainer>
-      <Header />
+      <Header isDark={false} activeLanguage="" />
       <main className="container">
         {projects.map(project => (
           <ProjectItem

@@ -32,9 +32,9 @@ export function Form() {
   const [loading, setLoading] = useState(false);
 
   async function sendContactMail({ name, email, message }: EmailParams) {
-    const serviceId = 'service_voek5qi';
-    const templateId = 'template_9gtqnhg';
-    const userId = 'EvBdnGxQKl1p-deY5';
+    const serviceId = process.env.EMAILJS_SERVICEID;
+    const templateId = process.env.EMAILJS_TEMPLATEID;
+    const userId = process.env.EMAILJS_USERID;
 
     try {
       await emailjs.send(
