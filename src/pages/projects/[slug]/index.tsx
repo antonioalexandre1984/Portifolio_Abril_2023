@@ -30,7 +30,7 @@ export default function Project({ project }: ProjectProps) {
   return (
     <ProjectContainer>
       <main className="container">
-        <Header />
+        <Header isDark={false} activeLanguage="" />
         <BannerProject
           title={project.title}
           type={project.type}
