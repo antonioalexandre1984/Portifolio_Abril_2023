@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { BsWhatsapp } from 'react-icons/bs'
 import Link from 'next/link';
-import { Container, TextContainer, InfosContainer, CodeItem, VideoContainer } from './styles';
+import { TypeAnimation } from "react-type-animation";
+import { Container, TextContainer, InfosContainer, CodeItem, VideoContainer, TypeAnimationContainer } from './styles';
 import photo2 from '../../assets/photo2.png';
 import { useLanguage } from '../hooks/useLanguage';
 import { formHeroData, heroData } from '../../../data';
@@ -11,6 +13,7 @@ export function HomeHero() {
   const { language } = useLanguage();
   const data = heroData[language];
   const formData = formHeroData[language]
+
   const WhatsAppButton = () => {
     window.location.href = 'https://wa.me/5583987921452';
   };
@@ -49,6 +52,24 @@ export function HomeHero() {
           </h1>
 
           <h2>{data.name}</h2>
+          <TypeAnimationContainer>
+            <TypeAnimation
+              sequence={[
+                data.officeFree,
+                2000,
+                data.officeFull,
+                2000,
+                data.officeBack,
+                2000,
+                data.officeFront,
+                2000,
+                () => { }
+              ]}
+              wrapper='div'
+              cursor
+              repeat={Infinity}
+            />
+          </TypeAnimationContainer>
         </TextContainer>
         <InfosContainer>
           <CodeItem data-aos='zoom-in'>

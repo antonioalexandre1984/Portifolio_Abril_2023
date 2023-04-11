@@ -83,6 +83,12 @@ export const TextContainer = styled.section`
   }
 `;
 
+export const TypeAnimationContainer = styled.div`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 1.5rem;
+  font-weight: 400;
+`;
+
 export const InfosContainer = styled.section`
   width: 100%;
   display: flex;
