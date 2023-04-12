@@ -197,3 +197,18 @@ export const footer = {
     title: 'Voltar ao topo'
   }
 };
+
+export const allprojects = {
+  en: {
+    title: 'Projects',
+    subtitle: 'My Projects',
+    description:
+      'Here you can see some of the projects I have been working on, I hope you like them.'
+  },
+  pt: {
+    title: 'Projetos',
+    subtitle: 'Meus Projetos',
+    description:
+      'Aqui você pode ver alguns dos projetos que estou trabalhando, espero que goste.'
+  }
+};

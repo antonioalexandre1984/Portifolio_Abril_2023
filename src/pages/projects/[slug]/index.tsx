@@ -6,6 +6,10 @@ import { Header } from '../../../components/Header';
 import { getPrismicClient } from '../../../services/prismic';
 import { ProjectContainer } from '../../../styles/ProjectStyles';
 import LoadingScreen from '../../../components/LoadingScreen';
+import { SectionTitle } from '../../../components/SectionTitle';
+import { allprojects } from '../../../../data';
+import { useLanguage } from '../../../components/hooks/useLanguage';
+import { Footer } from '../../../components/Footer';
 
 interface IProject {
   slug: string;
@@ -22,6 +26,8 @@ interface ProjectProps {
 
 export default function Project({ project }: ProjectProps) {
   const Router = useRouter();
+  const { language } = useLanguage();
+  const data = allprojects[language];
 
   if (Router.isFallback) {
     return <LoadingScreen />;
@@ -29,8 +35,10 @@ export default function Project({ project }: ProjectProps) {
 
   return (
     <ProjectContainer>
+      <Header isDark={false} activeLanguage="" />
+      <SectionTitle title={data.title} subtitle={data.subtitle} />
+      <h1 className="">{data.description}</h1>
       <main className="container">
-        <Header isDark={false} activeLanguage="" />
         <BannerProject
           title={project.title}
           type={project.type}
@@ -44,6 +52,7 @@ export default function Project({ project }: ProjectProps) {
           </a>
         </button>
       </main>
+      <Footer />
     </ProjectContainer>
   );
 }

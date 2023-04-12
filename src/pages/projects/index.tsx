@@ -4,6 +4,10 @@ import { Header } from '../../components/Header';
 import { ProjectItem } from '../../components/ProjectItem';
 import { getPrismicClient } from '../../services/prismic';
 import { ProjectsContainer } from '../../styles/ProjectsStyles';
+import { Footer } from '../../components/Footer';
+import { SectionTitle } from '../../components/SectionTitle';
+import { allprojects } from '../../../data';
+import { useLanguage } from '../../components/hooks/useLanguage';
 
 interface IProject {
   slug: string;
@@ -18,9 +22,13 @@ interface ProjectProps {
 }
 
 export default function Projects({ projects }: ProjectProps) {
+  const { language } = useLanguage();
+  const data = allprojects[language];
   return (
     <ProjectsContainer>
       <Header isDark={false} activeLanguage="" />
+      <SectionTitle title={data.title} subtitle={data.subtitle} />
+      <h1 className="">{data.description}</h1>
       <main className="container">
         {projects.map(project => (
           <ProjectItem
@@ -32,6 +40,7 @@ export default function Projects({ projects }: ProjectProps) {
           />
         ))}
       </main>
+      <Footer />
     </ProjectsContainer>
   );
 }

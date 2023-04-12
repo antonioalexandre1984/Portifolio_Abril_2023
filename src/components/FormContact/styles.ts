@@ -30,12 +30,12 @@ export const Input = styled.input<InputStyleContainerProps>`
     : theme.colors.border
   };
 
-  &::placeholder {
-    color: ${({ hasError, theme }) => hasError
+    &::placeholder {
+      color: ${({ hasError, theme }) => hasError
     ? theme.colors.error
     : theme.colors.primary
   };
-  }
+    }
 
   + span {
     display: ${({ hasError }) => (hasError ? 'block' : 'none')};
@@ -48,10 +48,10 @@ export const Input = styled.input<InputStyleContainerProps>`
     padding: 0.5rem;
 
   }
-  /* ... */
+
    &:not(:disabled):not([readonly]):focus + span {
     display: block;
-    margin-top: 0.5rem; /* adiciona uma margem superior */
+    margin-top: 0.5rem;
   }
 
  &::placeholder {
@@ -73,6 +73,12 @@ export const InputContainer = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 0.25rem;
+
+   @media (max-width: 700px) {
+    > * {
+      width: 100%;
+    }
+  }
 `;
 
 export const TextArea = styled.textarea<TextAreaProps>`
@@ -88,7 +94,6 @@ export const TextArea = styled.textarea<TextAreaProps>`
   transition: 0.5s;
   resize: none;
 
-    /* errs */
   border-color: ${({ hasError, theme }) => hasError
     ? theme.colors.error
     : theme.colors.border
@@ -131,10 +136,10 @@ export const TextArea = styled.textarea<TextAreaProps>`
 `;
 
 export const FormContainer = styled.form`
-  margin-top: 8rem;
+  margin-top: 4rem;
   width: 100%;
   display: grid;
-  grid-template-rows:  auto 1fr;
+  grid-template-rows: 1fr;
   gap: 1rem;
   > button {
     border: none;
@@ -155,10 +160,13 @@ export const FormContainer = styled.form`
     }
   }
   @media (max-width: 700px) {
-    margin-top: 5rem;
-    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 2rem;
   }
   @media (max-width: 450px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     > button {
       padding: 0.8rem 1.5rem;
       font-size: 1rem;

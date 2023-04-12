@@ -16,12 +16,12 @@ export const Container = styled.div`
     margin-top: 2rem;
 
     @media (max-width: 62.5rem) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 2fr);
       grid-gap: 5rem;
     }
 
     @media (max-width: 43.75rem) {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(2, 2fr);
       grid-gap: 3rem;
       margin-top: 5rem;
     }

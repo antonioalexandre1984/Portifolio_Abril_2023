@@ -8,7 +8,7 @@ import { Store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css';
 import { FormContainer, Input, TextArea, InputContainer } from './styles';
 import { useLanguage } from '../hooks/useLanguage';
-import { contact, formHeroData } from '../../../data';
+import { contact } from '../../../data';
 
 
 interface EmailParams {
@@ -32,9 +32,9 @@ export function Form() {
   const [loading, setLoading] = useState(false);
 
   async function sendContactMail({ name, email, message }: EmailParams) {
-    const serviceId = process.env.EMAILJS_SERVICEID;
-    const templateId = process.env.EMAILJS_TEMPLATEID;
-    const userId = process.env.EMAILJS_USERID;
+    const serviceId = 'service_voek5qi';
+    const templateId = 'template_9gtqnhg';
+    const userId = 'EvBdnGxQKl1p-deY5';
 
     try {
       await emailjs.send(
@@ -59,12 +59,11 @@ export function Form() {
           duration: 5000,
           onScreen: true
         },
-
       });
-      console.log('E-mail enviado com sucesso!');
-    } catch (error) {
-      console.error('Ocorreu um erro ao tentar enviar o e-mail:', error);
-      throw error;
+
+    } catch (e) {
+      console.error('Ocorreu um erro ao tentar enviar o e-mail:', e);
+      throw e;
     }
   }
 
@@ -169,8 +168,6 @@ export function Form() {
       <button type="submit" disabled={loading}>
         {data.button}
       </button>
-
-
     </FormContainer>
   );
 }
