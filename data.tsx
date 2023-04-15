@@ -141,12 +141,16 @@ export const showProjects = {
   en: {
     title: 'My Projects',
     buttonProject: 'Details',
-    button: 'See All Projects'
+    button: 'See All Projects',
+    description:
+      'We have extensive experience in developing projects using different technologies. These range from Javascript, Typescript, and the use of modern frontend frameworks such as React for styling with styled-components and Tailwind CSS, to backend technologies such as Node.js, Express.js, and Typescript. We ive worked on a wide range of applications, APIs, and microservices. We are equally proficient in developing full-stack solutions that require end-to-end development expertise. Our portfolio includes projects such as e-commerce platforms, social media networks, enterprise-level applications, and more. We take pride in providing high-quality and scalable solutions that meet our clients needs and exceed their expectations.'
   },
   pt: {
     title: 'Ultimos Projetos',
     buttonProject: 'Ver mais',
-    button: 'Ver todos os projetos'
+    button: 'Ver todos os projetos',
+    description:
+      'Temos uma ampla experiência no desenvolvimento de projetos em diferentes tecnologias.Vão desde Javascript,typescript e o uso de modernos frameworks de frontend, como React na estilização com styled-components e tailwind css, até tecnologias de backend como Node.js, ExpressJs,typescript. Jjá trabalhamos em uma ampla gama de aplicações, APIs e microservices. Temos igualmente proficiência no desenvolvimento de soluções full-stack que exigem conhecimento em desenvolvimento de ponta a ponta. Nosso portfólio inclui projetos como plataformas de e-commerce, redes sociais, aplicações de nível empresarial e muito mais. Orgulhamo-nos de fornecer soluções de alta qualidade e escaláveis que atendam às necessidades de nossos clientes e superem suas expectativas.'
   }
 };
 

@@ -1,11 +1,5 @@
 import Prismic from '@prismicio/client';
 import { DefaultClient } from '@prismicio/client/types/client';
-/*
-interface Request {
-  headers: {
-    [key: string]: string;
-  };
-} */
 
 export function getPrismicClient(req?: unknown): DefaultClient {
   if (!process.env.PRISMIC_API_ENDPOINT || !process.env.PRISMIC_ACCESS_TOKEN) {

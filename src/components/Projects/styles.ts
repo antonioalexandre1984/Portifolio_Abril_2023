@@ -67,39 +67,39 @@ export const ProjectContainer = styled.div<ProjectProps>`
       > div.text {
         right: -12rem;
       }
-      >div.overlay{
+      > div.overlay {
         opacity: 0.4;
       }
     }
-     >button a{
-    color:${({ theme }) => theme.colors.primary}
+    > button a {
+      color: ${({ theme }) => theme.colors.primary};
     }
   }
-    >button{
-      height: 4rem;
-      margin: 0 0 3rem 5rem;
-      background: none;
-      border: none;
+  > button {
+    height: 4rem;
+    margin: 0 0 3rem 5rem;
+    background: none;
+    border: none;
 
-      a{
-        color: ${({ theme }) => theme.colors.white};
-        font-size: 2rem;
-        font-weight: 300;
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        transition: 0.5s;
-      }
+    a {
+      color: ${({ theme }) => theme.colors.white};
+      font-size: 2rem;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: 0.5s;
     }
+  }
 
-  >section{
+  > section {
     width: 50rem;
     height: 100%;
-    background: url(${props => props.imgUrl})no-repeat center;
+    background: url(${props => props.imgUrl}) no-repeat center;
     background-size: cover;
     position: relative;
 
-    >div.overlay{
+    > div.overlay {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -108,82 +108,82 @@ export const ProjectContainer = styled.div<ProjectProps>`
       transition: 0.5s;
     }
 
-      >div.text{
-        position: absolute;
-        top: 3rem;
-        right: -10rem;
-        transition: 0.5s;
-        width: fit-content;
+    > div.text {
+      position: absolute;
+      top: 3rem;
+      right: -10rem;
+      transition: 0.5s;
+      width: fit-content;
 
-      h1{
+      h1 {
         color: ${({ theme }) => theme.colors.primary};
         font-size: 2.5rem;
-        text-shadow: -4px 5px 22px #11172B;
+        text-shadow: -4px 5px 22px #11172b;
       }
-      h2{
-        color: ${({ theme }) => theme.colors.secondary};
+      h2 {
+        color: ${({ theme }) => theme.colors.white};
         font-size: 2rem;
         font-weight: 300;
-        text-shadow: -4px 5px 22px #11172B;
+        text-shadow: -4px 5px 22px #11172b;
       }
     }
   }
 
-  &:nth-child(even){
+  &:nth-child(even) {
     flex-direction: row-reverse;
 
-    >button{
+    > button {
       margin: 3rem 5rem 0 0;
     }
-    >section >div.text{
+    > section > div.text {
       right: 0;
       left: -10rem;
-      text-align: right:
+      text-align: right;
     }
-    &:hover{
-      >section >div.text{
+    &:hover {
+      > section > div.text {
         left: -12rem;
       }
     }
   }
 
   @media (max-width: 90rem) {
-    > section{
+    > section {
       width: 40rem;
     }
   }
   @media (max-width: 62.5rem) {
-    > section{
+    > section {
       width: 100%;
-      >div.text{
+      > div.text {
         top: 1rem;
         left: 1rem;
       }
     }
-    >button{
+    > button {
       margin: 0;
       right: 1rem;
       bottom: 1rem;
       position: absolute;
     }
-    &:nth-child(even){
+    &:nth-child(even) {
       flex-direction: row;
-      >section{
+      > section {
         width: 100%;
-        >div.text{
-          left; 1rem;
+        > div.text {
+          left: 1rem;
           top: 1rem;
           text-align: left;
         }
       }
-      >button{
+      > button {
         right: 1rem;
         right: 1rem;
         margin: 0;
         position: absolute;
       }
-      &:hover{
-        >section >div.text{
+      &:hover {
+        > section > div.text {
           left: 1rem;
         }
       }
@@ -193,15 +193,15 @@ export const ProjectContainer = styled.div<ProjectProps>`
     height: 17rem;
   }
   @media (max-width: 31.25rem) {
-    >button{
+    > button {
       height: auto;
-      a{
+      a {
         font-size: 1.5rem;
         gap: 0.8rem;
       }
     }
-    >section > div.text{
-      h1{
+    > section > div.text {
+      h1 {
         font-size: 1.5rem;
       }
     }

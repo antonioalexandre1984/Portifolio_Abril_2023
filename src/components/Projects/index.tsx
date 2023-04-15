@@ -24,6 +24,9 @@ export function Projects({ projects }: ProjectItemProps) {
   return (
     <Container>
       <SectionTitle title={data.title} />
+      <div data-aos="fade-up">
+        <h2>{data.description}</h2>
+      </div>
       <section>
         {projects.slice(0, 3).map(project => (
           <ProjectItem

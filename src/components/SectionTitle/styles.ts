@@ -17,12 +17,21 @@ export const Container = styled.div`
     font-weight: 300;
     font-size: 3.5rem;
   }
+
+  h3 {
+    color: ${({ theme }) => theme.colors.white};
+    font-weight: bold;
+    font-size: 1rem;
+  }
   @media (max-width: 62.5rem) {
     > h1 {
       font-size: 2.5rem;
     }
     > h2 {
       font-size: 1.8rem;
+    }
+    > h3 {
+      font-size: 0.8rem;
     }
   }
   @media (max-width: 31.25rem) {
@@ -31,6 +40,9 @@ export const Container = styled.div`
     }
     > h2 {
       font-size: 1.2rem;
+    }
+    > h3 {
+      font-size: 0.6rem;
     }
   }
 `;
